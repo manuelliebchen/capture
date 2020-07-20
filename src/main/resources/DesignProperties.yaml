@@ -1,0 +1,29 @@
+standartFont:
+   file: "DejaVuSans.ttf"
+   size: 32
+
+titleFont:
+   file: "DejaVuSans.ttf"
+   size: 72
+
+subtitleFont:
+   file: "DejaVuSans.ttf"
+   size: 42
+
+mediumSmallFont:
+   file: "DejaVuSans.ttf"
+   size: 24
+   
+smallFont:
+   file: "DejaVuSans.ttf"
+   size: 16
+
+foregroundColor: "#661141"
+backgroundColor: "#116611"
+
+buttonFont:
+   file: "DejaVuSans.ttf"
+   size: 32
+buttonTextColor: "#000000"
+buttonHeight: 70
+   
