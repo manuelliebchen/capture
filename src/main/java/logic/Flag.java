@@ -14,7 +14,7 @@ public class Flag extends GameObject implements IDrawable {
 
     public Flag(Vec2f position) {
         super(position);
-        this.texture = new Texture(new Vec2f(-0.1f, -0.1f), "Ressource.png", 0.2f, false);
+        this.texture = new Texture(new Vec2f(), "icon.png", 0.1f, false);
     }
 
 

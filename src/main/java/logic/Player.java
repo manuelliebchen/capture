@@ -19,7 +19,7 @@ public class Player extends GameObject implements IDrawable {
     public Player(Vec2f position, IPlayerController controller) {
         super(position);
         this.controller = controller;
-        this.texture = new Texture(new Vec2f(-0.05f, -0.05f), "Unit1.png", 0.1f, false);
+        this.texture = new Texture(new Vec2f(-0.05f, -0.05f), "Ressource.png", 0.1f, false);
     }
 
     IPlayerController getController(){
