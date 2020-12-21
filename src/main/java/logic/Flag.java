@@ -17,7 +17,6 @@ public class Flag extends GameObject implements IDrawable {
         this.texture = new Texture(new Vec2f(), "icon.png", 0.1f, false);
     }
 
-
     public Circle2f getBounds(){
             return new Circle2f(position, 0.1f);
     }

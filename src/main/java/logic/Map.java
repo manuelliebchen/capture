@@ -1,5 +1,6 @@
 package logic;
 
+import de.acagamics.framework.geometry.Circle2f;
 import de.acagamics.framework.geometry.Vec2f;
 import de.acagamics.framework.resources.DesignProperties;
 import de.acagamics.framework.resources.ResourceManager;
@@ -19,13 +20,20 @@ public class Map implements IDrawable {
         this.players = players;
         flags = new ArrayList<>(n);
         Random random = new Random(seed);
+        List<Circle2f> flagPositions = new ArrayList<>(n);
+        float radius = 1f;
         for(int i = 0; i < n; ++i){
-            Vec2f position;
+            Circle2f position;
             do{
-                position = new Vec2f(random.nextFloat() * 2 -1, random.nextFloat() * 2 -1);
-            }while(position.length() > 1);
-            flags.add(new Flag(position));
+                position = new Circle2f(new Vec2f(random.nextFloat() * 2 * radius - radius, random.nextFloat() * 2 * radius - radius), 0.1f);
+            } while(position.getPosition().length() > radius);
+            flagPositions.add(position);
         }
+        java.util.Map<Circle2f, Vec2f> posUpdate = Circle2f.relexCollisions(flagPositions);
+        for( Circle2f pos : flagPositions){
+            flags.add(new Flag(pos.getPosition().add(posUpdate.get(pos))));
+        }
+
     }
 
     void update(){
